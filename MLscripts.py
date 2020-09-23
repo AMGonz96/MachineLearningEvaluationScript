@@ -24,7 +24,7 @@ from keras.models import Sequential #import the model we will be using
 
 #Imports data frame
 df = pd.read_csv("infile.csv")
-
+Label = "Label Varable Here"
 
 def RFC(train_x, test_x, train_y, test_y):
     print("Random Forest Classifier")
@@ -136,7 +136,7 @@ def GetOutData(y_pred, test_y):
  
 
     
-train_x, test_x, train_y, test_y = train_test_split(df.drop('benign', axis =1 ),df['benign'],test_size=0.3, random_state=42)
+train_x, test_x, train_y, test_y = train_test_split(df.drop(Label, axis =1 ),df[Label],test_size=0.3, random_state=42)
 
 rfc = RFC(train_x, test_x, train_y, test_y)
 gnb = GNB(train_x, test_x, train_y, test_y)
